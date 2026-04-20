@@ -3,25 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="UPAA District 17 - Alcoholics Anonymous in the Upper Peninsula of Michigan. A fellowship of recovery, hope, and service.">
+    <meta name="description" content="UPAA District 17 - Alcoholics Anonymous Meetings in the Upper Peninsula of Michigan">
     <title>UPAA District 17 | Alcoholics Anonymous</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap');
         
-        :root {
-            --aa-blue: #003366;
-        }
-        
-        * {
-            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-            transition-duration: 150ms;
-        }
-        
-        body {
-            font-family: 'Inter', system_ui, sans-serif;
-        }
+        body { font-family: 'Inter', system_ui, sans-serif; }
         
         .hero-bg {
             background: linear-gradient(180deg, #001a33 0%, #000d1a 100%);
@@ -29,68 +17,40 @@
             overflow: hidden;
         }
         
-        .stars {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            pointer-events: none;
-        }
-        
+        .stars { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
         .star {
             position: absolute;
             background: white;
             border-radius: 50%;
             animation: twinkle 3s ease-in-out infinite alternate;
         }
+        @keyframes twinkle { 0% { opacity: 0.3; } 100% { opacity: 1; } }
         
-        @keyframes twinkle {
-            0% { opacity: 0.2; }
-            100% { opacity: 1; }
-        }
-        
-        .aa-logo {
-            filter: drop-shadow(0 0 30px rgba(255,255,255,0.6));
-        }
-        
-        .nav-link {
-            position: relative;
-        }
-        
+        .nav-link { position: relative; }
         .nav-link:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -2px;
-            left: 0;
+            content: ''; position: absolute; width: 0; height: 2px; bottom: -2px; left: 0;
             background-color: #003366;
         }
+        .nav-link:hover:after { width: 100%; }
         
-        .nav-link:hover:after {
-            width: 100%;
-        }
+        .section-header { font-family: 'Playfair Display', sans-serif; }
         
-        .section-header {
-            font-family: 'Playfair Display', sans-serif;
+        .meeting-day {
+            background: linear-gradient(135deg, #003366, #001a33);
+            color: white;
         }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800">
+
     <!-- NAVBAR -->
     <nav class="bg-white border-b shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex justify-between items-center py-4">
-                <!-- Logo + Title -->
                 <div class="flex items-center gap-x-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 200 200" class="aa-logo">
-                        <!-- Outer Circle -->
                         <circle cx="100" cy="100" r="92" fill="none" stroke="#003366" stroke-width="18"/>
-                        <!-- Triangle -->
                         <polygon points="100,38 165,145 35,145" fill="none" stroke="#003366" stroke-width="14" stroke-linejoin="round"/>
-                        <!-- AA Text -->
                         <text x="100" y="118" text-anchor="middle" fill="#003366" font-size="58" font-family="Arial Black" font-weight="900" letter-spacing="-4">AA</text>
                     </svg>
                     <div>
@@ -99,333 +59,155 @@
                     </div>
                 </div>
 
-                <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
                     <a href="#home" class="nav-link text-slate-700 hover:text-[#003366]">Home</a>
                     <a href="#about" class="nav-link text-slate-700 hover:text-[#003366]">About AA</a>
                     <a href="#meetings" class="nav-link text-slate-700 hover:text-[#003366]">Meetings</a>
-                    <a href="#service" class="nav-link text-slate-700 hover:text-[#003366]">Service</a>
-                    <a href="#events" class="nav-link text-slate-700 hover:text-[#003366]">Events</a>
                     <a href="#contact" class="nav-link text-slate-700 hover:text-[#003366]">Contact</a>
                 </div>
-
-                <div class="flex items-center gap-x-4">
-                    <a href="https://aa.org" target="_blank" 
-                       class="text-xs font-medium bg-[#003366] text-white px-5 py-2.5 rounded-full hover:bg-blue-900 flex items-center gap-x-2">
-                        <span>Visit aa.org</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L9 15" />
-                        </svg>
-                    </a>
-                    
-                    <!-- Mobile Menu Button -->
-                    <button onclick="toggleMobileMenu()" class="md:hidden text-[#003366]">
-                        <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-            <div class="px-6 py-4 flex flex-col gap-y-4 text-sm font-medium">
-                <a href="#home" onclick="toggleMobileMenu()" class="py-2">Home</a>
-                <a href="#about" onclick="toggleMobileMenu()" class="py-2">About AA</a>
-                <a href="#meetings" onclick="toggleMobileMenu()" class="py-2">Meetings</a>
-                <a href="#service" onclick="toggleMobileMenu()" class="py-2">Service</a>
-                <a href="#events" onclick="toggleMobileMenu()" class="py-2">Events</a>
-                <a href="#contact" onclick="toggleMobileMenu()" class="py-2">Contact Us</a>
-                <a href="https://aa.org" target="_blank" class="text-[#003366] flex items-center gap-x-2">Official AA Website →</a>
             </div>
         </div>
     </nav>
 
-    <!-- HERO: Blue night sky with stars + AA logo -->
+    <!-- HERO -->
     <header id="home" class="hero-bg h-screen flex items-center relative">
-        <!-- Stars container (populated by JS) -->
         <div id="stars-container" class="stars"></div>
-        
         <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
             <div class="flex justify-center mb-8">
-                <!-- Large AA Logo -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 200 200" class="aa-logo">
-                    <!-- Outer Circle -->
                     <circle cx="100" cy="100" r="92" fill="none" stroke="#ffffff" stroke-width="22"/>
-                    <!-- Triangle -->
                     <polygon points="100,38 165,145 35,145" fill="none" stroke="#ffffff" stroke-width="16" stroke-linejoin="round"/>
-                    <!-- AA Text -->
                     <text x="100" y="118" text-anchor="middle" fill="#003366" font-size="58" font-family="Arial Black" font-weight="900" letter-spacing="-4">AA</text>
                 </svg>
             </div>
-            
-            <h1 class="text-5xl md:text-7xl font-bold text-white tracking-tighter mb-4">
-                UPAA DISTRICT 17
-            </h1>
-            <p class="text-2xl md:text-3xl text-white/90 font-light mb-8">
-                Alcoholics Anonymous • Upper Peninsula, Michigan
-            </p>
-            <p class="max-w-md mx-auto text-white/80 text-lg mb-10">
-                A fellowship of men and women who share their experience, strength, and hope with each other that they may solve their common problem and help others to recover from alcoholism.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#meetings" 
-                   class="inline-flex items-center justify-center bg-white text-[#003366] font-semibold px-8 py-4 rounded-2xl text-lg hover:shadow-xl">
-                    Find a Meeting Near You
-                </a>
-                <a href="#contact" 
-                   class="inline-flex items-center justify-center border-2 border-white text-white font-semibold px-8 py-4 rounded-2xl text-lg hover:bg-white/10">
-                    Get in Touch
-                </a>
-            </div>
-            
-            <div class="mt-12 text-white/60 text-sm flex items-center justify-center gap-x-8">
-                <div class="flex items-center gap-x-2">
-                    <span class="block w-3 h-3 bg-emerald-400 rounded-full animate-pulse"></span>
-                    Open to anyone with a desire to stop drinking
-                </div>
-                <div>No dues or fees • Self-supporting</div>
-            </div>
-        </div>
-        
-        <!-- Scroll indicator -->
-        <div class="absolute bottom-8 left-1/2 flex flex-col items-center text-white/40 text-xs">
-            <div>SCROLL FOR MORE</div>
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-9-9m0 0L5 5" />
-            </svg>
+            <h1 class="text-5xl md:text-7xl font-bold text-white tracking-tighter mb-4">UPAA DISTRICT 17</h1>
+            <p class="text-2xl md:text-3xl text-white/90 font-light">Alcoholics Anonymous • Upper Peninsula, Michigan</p>
         </div>
     </header>
 
-    <!-- ABOUT AA -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-12 gap-12 items-center">
-                <div class="md:col-span-7">
-                    <h2 class="section-header text-4xl font-bold text-[#003366] mb-6">What is Alcoholics Anonymous?</h2>
-                    <div class="prose prose-slate text-lg leading-relaxed">
-                        <p class="text-slate-600">Alcoholics Anonymous is a fellowship of people who share their experience, strength and hope with each other that they may solve their common problem and help others to recover from alcoholism.</p>
-                        <p class="text-slate-600">The only requirement for membership is a desire to stop drinking. There are no dues or fees for A.A. membership; we are self-supporting through our own contributions. A.A. is not allied with any sect, denomination, politics, organization or institution; does not wish to engage in any controversy; neither endorses nor opposes any causes.</p>
-                        <p class="text-slate-600">Our primary purpose is to stay sober and help other alcoholics to achieve sobriety.</p>
-                    </div>
-                    <a href="https://aa.org" target="_blank" class="inline-flex mt-8 items-center gap-x-3 text-[#003366] font-medium">
-                        Read the full Preamble and 12 Traditions 
-                        <span class="text-xl">→</span>
-                    </a>
-                </div>
-                
-                <div class="md:col-span-5 bg-slate-100 rounded-3xl p-8 text-center">
-                    <div class="inline-flex items-center justify-center w-24 h-24 bg-[#003366] text-white rounded-2xl text-5xl mb-6">🪔</div>
-                    <h3 class="font-semibold text-2xl mb-3">The 12 Steps</h3>
-                    <p class="text-slate-500">A program of recovery that has helped millions find a new way of life.</p>
-                    <a href="https://aa.org/the-twelve-steps" target="_blank" class="mt-6 block text-[#003366] underline">Learn the 12 Steps →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- MEETINGS -->
-    <section id="meetings" class="py-20 bg-slate-100">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="section-header text-4xl font-bold text-[#003366] text-center mb-4">Find a Meeting in District 17</h2>
-            <p class="text-center text-slate-600 max-w-md mx-auto mb-12">Meetings are held throughout the Upper Peninsula. All are welcome. Check times and locations below (update this section with your current schedule).</p>
+    <!-- MEETINGS PAGE -->
+    <section id="meetings" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="section-header text-5xl font-bold text-[#003366] text-center mb-12">Meetings</h2>
             
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Sample Meeting Cards - replace with real ones -->
-                <div class="bg-white rounded-3xl p-6 shadow-sm">
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <span class="px-3 py-1 text-xs font-medium bg-emerald-100 text-emerald-700 rounded-full">Open Discussion</span>
-                            <p class="font-semibold mt-4">Tuesday Night Big Book</p>
-                            <p class="text-slate-500 text-sm">7:00 PM • Marquette</p>
-                        </div>
-                        <div class="text-right text-xs text-slate-400">Weekly</div>
-                    </div>
-                    <p class="text-slate-400 text-sm mt-8">Location: First United Methodist Church, 120 W. Washington St.</p>
-                </div>
-                
-                <div class="bg-white rounded-3xl p-6 shadow-sm">
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <span class="px-3 py-1 text-xs font-medium bg-amber-100 text-amber-700 rounded-full">Women’s Meeting</span>
-                            <p class="font-semibold mt-4">Wednesday Step Study</p>
-                            <p class="text-slate-500 text-sm">6:30 PM • Escanaba</p>
-                        </div>
-                        <div class="text-right text-xs text-slate-400">Weekly</div>
-                    </div>
-                    <p class="text-slate-400 text-sm mt-8">Location: St. Joseph Church basement</p>
-                </div>
-                
-                <div class="bg-white rounded-3xl p-6 shadow-sm">
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <span class="px-3 py-1 text-xs font-medium bg-blue-100 text-blue-700 rounded-full">Men’s Meeting</span>
-                            <p class="font-semibold mt-4">Saturday Morning Serenity</p>
-                            <p class="text-slate-500 text-sm">9:00 AM • Sault Ste. Marie</p>
-                        </div>
-                        <div class="text-right text-xs text-slate-400">Weekly</div>
-                    </div>
-                    <p class="text-slate-400 text-sm mt-8">Location: Chippewa County Courthouse</p>
-                </div>
-            </div>
-            
-            <p class="text-center text-xs text-slate-500 mt-12">
-                Need help finding a meeting right now? Call the AA 24/7 Helpline: <a href="tel:800-344-2666" class="underline">800-344-2666</a> or visit <a href="https://aa.org/find-aa" target="_blank" class="underline">aa.org/find-aa</a>
-            </p>
-        </div>
-    </section>
+            <div class="grid md:grid-cols-2 gap-8">
 
-    <!-- SERVICE & EVENTS -->
-    <section id="service" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-16">
-                <div>
-                    <h2 class="section-header text-4xl font-bold text-[#003366] mb-8">District 17 Service</h2>
-                    <ul class="space-y-6 text-slate-600">
-                        <li class="flex gap-x-4"><span class="text-2xl">📍</span> <div><strong>General Service Representative (GSR)</strong> – Connect your group to the District</div></li>
-                        <li class="flex gap-x-4"><span class="text-2xl">📬</span> <div><strong>District Committee Member (DCM)</strong> – Carry the message to Area 74</div></li>
-                        <li class="flex gap-x-4"><span class="text-2xl">🗣️</span> <div><strong>Public Information</strong> – Share AA with hospitals, courts, and the community</div></li>
-                        <li class="flex gap-x-4"><span class="text-2xl">📞</span> <div><strong>12th Step Calls</strong> – Help the still-suffering alcoholic</div></li>
+                <!-- Monday -->
+                <div class="meeting-day rounded-3xl p-8">
+                    <h3 class="text-3xl font-semibold mb-6 text-center">MONDAY</h3>
+                    <ul class="space-y-6 text-white">
+                        <li><strong>Noon</strong> — 401 Club (O)<br><span class="opacity-90">401 Kimberly, Iron Mountain</span></li>
+                        <li><strong>7 pm</strong> — United Lutheran (C)<br><span class="opacity-90">506 Superior, Crystal Falls</span></li>
+                        <li><strong>7 pm</strong> — 1st Lutheran (C)<br><span class="opacity-90">1210 Stephenson, Iron Mountain</span></li>
                     </ul>
                 </div>
-                
-                <div id="events" class="bg-slate-900 text-white rounded-3xl p-10">
-                    <h3 class="text-white text-3xl font-semibold mb-6">Upcoming Events</h3>
-                    <div class="space-y-6">
-                        <div class="flex justify-between border-b border-white/20 pb-6">
-                            <div>
-                                <p class="font-medium">District 17 Business Meeting</p>
-                                <p class="text-sm text-white/60">First Saturday of every month • 10 AM</p>
-                            </div>
-                            <div class="text-right text-xs bg-white/10 px-4 rounded-2xl flex items-center">Zoom + In-person</div>
-                        </div>
-                        <div class="flex justify-between border-b border-white/20 pb-6">
-                            <div>
-                                <p class="font-medium">UPAA Area 74 Roundup</p>
-                                <p class="text-sm text-white/60">June 2026 • Location TBD</p>
-                            </div>
-                            <div class="text-emerald-400 text-xs font-medium">Save the date!</div>
-                        </div>
-                    </div>
-                    <p class="text-xs text-white/40 mt-8">Want to host or attend an event? Email us below.</p>
+
+                <!-- Tuesday -->
+                <div class="meeting-day rounded-3xl p-8">
+                    <h3 class="text-3xl font-semibold mb-6 text-center">TUESDAY</h3>
+                    <ul class="space-y-6 text-white">
+                        <li><strong>10 am</strong> — St Agnes School Bldg (C)<br><span class="opacity-90">702 N 4th Ave, Iron River</span></li>
+                        <li><strong>10 am</strong> — St Mary's (C)<br><span class="opacity-90">401 Main St, Norway</span></li>
+                        <li><strong>10 am</strong> — VA Hospital (Veterans only)<br><span class="opacity-90">Rm 3117 VA, Iron Mountain</span></li>
+                        <li><strong>Noon</strong> — 401 Club (O)<br><span class="opacity-90">401 Kimberly, Iron Mountain</span></li>
+                        <li><strong>5 pm</strong> — VA Hospital (O)<br><span class="opacity-90">2 E Urgent Care, Iron Mountain</span></li>
+                        <li><strong>6 pm</strong> — Fellowship Club Big Book Study (C)<br><span class="opacity-90">105 W Fleshiem, Iron Mountain</span></li>
+                    </ul>
                 </div>
+
+                <!-- Wednesday -->
+                <div class="meeting-day rounded-3xl p-8">
+                    <h3 class="text-3xl font-semibold mb-6 text-center">WEDNESDAY</h3>
+                    <ul class="space-y-6 text-white">
+                        <li><strong>Noon</strong> — 401 Club (O)<br><span class="opacity-90">401 Kimberly, Iron Mountain</span></li>
+                        <li><strong>6 pm</strong> — 1st Presbyterian Big Book Study (C)<br><span class="opacity-90">525 W Adams (N 6th), Iron River</span></li>
+                        <li><strong>7 pm</strong> — M95 Church Basement (O)<br><span class="opacity-90">Randville</span></li>
+                        <li><strong>7 pm</strong> — St Margaret Church (O)<br><span class="opacity-90">Pembine</span></li>
+                    </ul>
+                </div>
+
+                <!-- Thursday -->
+                <div class="meeting-day rounded-3xl p-8">
+                    <h3 class="text-3xl font-semibold mb-6 text-center">THURSDAY</h3>
+                    <ul class="space-y-6 text-white">
+                        <li><strong>Noon</strong> — 401 Club (O)<br><span class="opacity-90">401 Kimberly, Iron Mountain</span></li>
+                        <li><strong>5:30 pm</strong> — 401 Club (C) Women<br><span class="opacity-90">401 Kimberly, Iron Mountain</span></li>
+                        <li><strong>5:30 pm</strong> — Trinity Methodist Newcomers (O)<br><span class="opacity-90">808 Carpenter, Iron Mountain</span></li>
+                        <li><strong>7 pm</strong> — VA Hospital<br><span class="opacity-90">315 E H St, Iron Mountain</span></li>
+                    </ul>
+                </div>
+
+                <!-- Friday -->
+                <div class="meeting-day rounded-3xl p-8">
+                    <h3 class="text-3xl font-semibold mb-6 text-center">FRIDAY</h3>
+                    <ul class="space-y-6 text-white">
+                        <li><strong>7 am</strong> — Fellowship Club (C)<br><span class="opacity-90">105 W Fleshiem, Iron Mountain</span></li>
+                        <li><strong>10 am</strong> — 1st Lutheran (O)<br><span class="opacity-90">1210 Stephenson, Iron Mountain</span></li>
+                        <li><strong>10 am</strong> — St Agnes School Bldg (C)<br><span class="opacity-90">702 N 4th Ave, Iron River</span></li>
+                        <li><strong>Noon</strong> — 401 Club (O)<br><span class="opacity-90">401 Kimberly, Iron Mountain</span></li>
+                        <li><strong>7:30 pm</strong> — Nadeau Township Hall (C)<br><span class="opacity-90">403 N US 41, Carney</span></li>
+                    </ul>
+                </div>
+
+                <!-- Saturday -->
+                <div class="meeting-day rounded-3xl p-8">
+                    <h3 class="text-3xl font-semibold mb-6 text-center">SATURDAY</h3>
+                    <ul class="space-y-6 text-white">
+                        <li><strong>7 am</strong> — Fellowship Club (O)<br><span class="opacity-90">105 W Fleshiem, Iron Mountain</span></li>
+                        <li><strong>10 am</strong> — 401 Club 12×12 (O)<br><span class="opacity-90">401 Kimberly, Iron Mountain</span></li>
+                        <li><strong>6 pm</strong> — 401 Club Sat Sanity Group (O)<br><span class="opacity-90">401 Kimberly, Iron Mountain<br>(every 3rd Sat Open Speaker)</span></li>
+                        <li><strong>6 pm</strong> — 1st Presbyterian Big Book (O)<br><span class="opacity-90">525 W Adams (N 6th), Iron River</span></li>
+                    </ul>
+                </div>
+
+                <!-- Sunday -->
+                <div class="meeting-day rounded-3xl p-8">
+                    <h3 class="text-3xl font-semibold mb-6 text-center">SUNDAY</h3>
+                    <ul class="space-y-6 text-white">
+                        <li><strong>10 am</strong> — 401 Club (O)<br><span class="opacity-90">401 Kimberly, Iron Mountain</span></li>
+                        <li><strong>5 pm</strong> — Fellowship Club (C)<br><span class="opacity-90">105 W Fleshiem, Iron Mountain</span></li>
+                        <li><strong>6 pm</strong> — United Lutheran (C)<br><span class="opacity-90">506 Superior, Crystal Falls</span></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="mt-16 text-center text-sm text-slate-500">
+                <p><strong>(O)</strong> = Open Meeting  <strong>(C)</strong> = Closed Meeting</p>
+                <p class="mt-4">All are welcome. Call the 24/7 AA Helpline if you need immediate help: <a href="tel:800-344-2666" class="underline">800-344-2666</a></p>
             </div>
         </div>
     </section>
 
     <!-- CONTACT -->
     <section id="contact" class="py-20 bg-[#003366] text-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="section-header text-4xl font-bold mb-3">Reach Out to District 17</h2>
-                <p class="text-white/70">We’re here to help. Confidential • No judgment • 100% anonymous</p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8 max-w-3xl mx-auto">
-                <div class="bg-white/10 backdrop-blur-md rounded-3xl p-8 text-center">
-                    <div class="text-4xl mb-4">📧</div>
-                    <p class="font-medium mb-1">district17@upa a.org</p>
-                    <p class="text-sm text-white/60">(replace with your real email)</p>
-                </div>
-                <div class="bg-white/10 backdrop-blur-md rounded-3xl p-8 text-center">
-                    <div class="text-4xl mb-4">📱</div>
-                    <p class="font-medium">24/7 AA Helpline</p>
-                    <a href="tel:800-344-2666" class="text-3xl font-semibold">800-344-2666</a>
-                </div>
-                <div class="bg-white/10 backdrop-blur-md rounded-3xl p-8 text-center">
-                    <div class="text-4xl mb-4">📍</div>
-                    <p class="font-medium">Upper Peninsula, Michigan</p>
-                    <p class="text-sm text-white/70">Serving Baraga, Delta, Dickinson, Gogebic, Houghton, Iron, Keweenaw, Marquette, Menominee, Ontonagon & Schoolcraft Counties</p>
-                </div>
-            </div>
-            
-            <p class="text-center text-white/50 text-xs mt-12">
-                This website is neither approved nor endorsed by Alcoholics Anonymous World Services, Inc.<br>
-                It is provided as a service of District 17, Area 74 (Northern Wisconsin & Upper Peninsula of Michigan).
-            </p>
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="section-header text-4xl font-bold mb-6">Need Help or More Information?</h2>
+            <p class="text-xl mb-8">Contact UPAA District 17</p>
+            <div class="text-2xl font-medium">district17@upaadistrict17.org</div>
+            <p class="mt-12 text-sm opacity-75">This website is a service of Alcoholics Anonymous District 17, Upper Peninsula, Michigan.</p>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-slate-900 text-white/70 py-12">
-        <div class="max-w-7xl mx-auto px-6 text-center text-xs">
-            <p>© 2026 UPAA District 17 • Alcoholics Anonymous</p>
-            <p class="mt-2">The only requirement for membership is a desire to stop drinking.</p>
-            <div class="flex justify-center gap-x-6 mt-6 text-[10px]">
-                <a href="https://aa.org" class="hover:text-white">aa.org</a>
-                <a href="#" class="hover:text-white">Privacy • Anonymity</a>
-                <a href="#" class="hover:text-white">District Guidelines</a>
-            </div>
-        </div>
+    <footer class="bg-slate-900 text-white/60 py-8 text-center text-xs">
+        <p>© 2026 UPAA District 17 • Alcoholics Anonymous</p>
     </footer>
 
     <script>
-        // Tailwind script already loaded
-        function initializeTailwind() {
-            // Already initialized via CDN
-        }
-        
-        // Create twinkling stars
         function createStars() {
-            const container = document.getElementById('stars-container')
-            const starCount = 280
-            
-            for (let i = 0; i < starCount; i++) {
-                const star = document.createElement('div')
-                star.className = 'star'
-                
-                // Random position
-                const x = Math.random() * 100
-                const y = Math.random() * 100
-                star.style.left = `${x}%`
-                star.style.top = `${y}%`
-                
-                // Random size (small to medium)
-                const size = Math.random() * 3 + 1
-                star.style.width = `${size}px`
-                star.style.height = `${size}px`
-                
-                // Random animation delay and duration
-                const delay = Math.random() * 3
-                star.style.animationDelay = `-${delay}s`
-                const duration = Math.random() * 4 + 2
-                star.style.animationDuration = `${duration}s`
-                
-                // Occasional brighter stars
-                if (Math.random() > 0.85) {
-                    star.style.boxShadow = '0 0 6px 2px rgba(255,255,255,0.9)'
-                }
-                
-                container.appendChild(star)
+            const container = document.getElementById('stars-container');
+            for (let i = 0; i < 250; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 80 + '%';
+                star.style.width = Math.random() * 3 + 1 + 'px';
+                star.style.height = star.style.width;
+                star.style.animationDelay = '-' + Math.random() * 4 + 's';
+                container.appendChild(star);
             }
         }
-        
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu')
-            const icon = document.getElementById('menu-icon')
-            
-            if (menu.classList.contains('hidden')) {
-                menu.style.display = 'block'
-                icon.innerHTML = `
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6h12v12" />
-                `
-            } else {
-                menu.style.display = 'none'
-                icon.innerHTML = `
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                `
-            }
-            menu.classList.toggle('hidden')
-        }
-        
-        // Initialize everything
-        window.onload = function() {
-            createStars()
-            console.log('%c✅ UPAA District 17 basic website ready! Copy this entire file as index.html', 'color:#003366; font-family:monospace')
-        }
+        window.onload = createStars;
     </script>
 </body>
 </html>
