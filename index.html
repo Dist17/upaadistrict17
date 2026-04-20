@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="UPAA District 17 - Alcoholics Anonymous Meetings in the Upper Peninsula of Michigan">
+    <meta name="description" content="UPAA District 17 - Alcoholics Anonymous in the Upper Peninsula of Michigan">
     <title>UPAA District 17 | Alcoholics Anonymous</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -26,7 +26,9 @@
         }
         @keyframes twinkle { 0% { opacity: 0.3; } 100% { opacity: 1; } }
         
-        .nav-link { position: relative; }
+        .nav-link {
+            position: relative;
+        }
         .nav-link:after {
             content: ''; position: absolute; width: 0; height: 2px; bottom: -2px; left: 0;
             background-color: #003366;
@@ -34,11 +36,6 @@
         .nav-link:hover:after { width: 100%; }
         
         .section-header { font-family: 'Playfair Display', sans-serif; }
-        
-        .meeting-day {
-            background: linear-gradient(135deg, #003366, #001a33);
-            color: white;
-        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800">
@@ -48,7 +45,7 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex justify-between items-center py-4">
                 <div class="flex items-center gap-x-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 200 200" class="aa-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 200 200">
                         <circle cx="100" cy="100" r="92" fill="none" stroke="#003366" stroke-width="18"/>
                         <polygon points="100,38 165,145 35,145" fill="none" stroke="#003366" stroke-width="14" stroke-linejoin="round"/>
                         <text x="100" y="118" text-anchor="middle" fill="#003366" font-size="58" font-family="Arial Black" font-weight="900" letter-spacing="-4">AA</text>
@@ -59,10 +56,11 @@
                     </div>
                 </div>
 
+                <!-- Navigation Links -->
                 <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
                     <a href="#home" class="nav-link text-slate-700 hover:text-[#003366]">Home</a>
                     <a href="#about" class="nav-link text-slate-700 hover:text-[#003366]">About AA</a>
-                    <a href="#meetings" class="nav-link text-slate-700 hover:text-[#003366]">Meetings</a>
+                    <a href="meetings.html" class="nav-link text-slate-700 hover:text-[#003366] font-semibold">District 17 Meetings</a>
                     <a href="#contact" class="nav-link text-slate-700 hover:text-[#003366]">Contact</a>
                 </div>
             </div>
@@ -81,111 +79,34 @@
                 </svg>
             </div>
             <h1 class="text-5xl md:text-7xl font-bold text-white tracking-tighter mb-4">UPAA DISTRICT 17</h1>
-            <p class="text-2xl md:text-3xl text-white/90 font-light">Alcoholics Anonymous • Upper Peninsula, Michigan</p>
+            <p class="text-2xl md:text-3xl text-white/90 font-light mb-8">Alcoholics Anonymous • Upper Peninsula, Michigan</p>
+            <a href="meetings.html" 
+               class="inline-flex items-center justify-center bg-white text-[#003366] font-semibold px-8 py-4 rounded-2xl text-lg hover:shadow-xl">
+                View District 17 Meetings →
+            </a>
         </div>
     </header>
 
-    <!-- MEETINGS PAGE -->
-    <section id="meetings" class="py-20 bg-white">
-        <div class="max-w-5xl mx-auto px-6">
-            <h2 class="section-header text-5xl font-bold text-[#003366] text-center mb-12">Meetings</h2>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-
-                <!-- Monday -->
-                <div class="meeting-day rounded-3xl p-8">
-                    <h3 class="text-3xl font-semibold mb-6 text-center">MONDAY</h3>
-                    <ul class="space-y-6 text-white">
-                        <li><strong>Noon</strong> — 401 Club (O)<br><span class="opacity-90">401 Kimberly, Iron Mountain</span></li>
-                        <li><strong>7 pm</strong> — United Lutheran (C)<br><span class="opacity-90">506 Superior, Crystal Falls</span></li>
-                        <li><strong>7 pm</strong> — 1st Lutheran (C)<br><span class="opacity-90">1210 Stephenson, Iron Mountain</span></li>
-                    </ul>
-                </div>
-
-                <!-- Tuesday -->
-                <div class="meeting-day rounded-3xl p-8">
-                    <h3 class="text-3xl font-semibold mb-6 text-center">TUESDAY</h3>
-                    <ul class="space-y-6 text-white">
-                        <li><strong>10 am</strong> — St Agnes School Bldg (C)<br><span class="opacity-90">702 N 4th Ave, Iron River</span></li>
-                        <li><strong>10 am</strong> — St Mary's (C)<br><span class="opacity-90">401 Main St, Norway</span></li>
-                        <li><strong>10 am</strong> — VA Hospital (Veterans only)<br><span class="opacity-90">Rm 3117 VA, Iron Mountain</span></li>
-                        <li><strong>Noon</strong> — 401 Club (O)<br><span class="opacity-90">401 Kimberly, Iron Mountain</span></li>
-                        <li><strong>5 pm</strong> — VA Hospital (O)<br><span class="opacity-90">2 E Urgent Care, Iron Mountain</span></li>
-                        <li><strong>6 pm</strong> — Fellowship Club Big Book Study (C)<br><span class="opacity-90">105 W Fleshiem, Iron Mountain</span></li>
-                    </ul>
-                </div>
-
-                <!-- Wednesday -->
-                <div class="meeting-day rounded-3xl p-8">
-                    <h3 class="text-3xl font-semibold mb-6 text-center">WEDNESDAY</h3>
-                    <ul class="space-y-6 text-white">
-                        <li><strong>Noon</strong> — 401 Club (O)<br><span class="opacity-90">401 Kimberly, Iron Mountain</span></li>
-                        <li><strong>6 pm</strong> — 1st Presbyterian Big Book Study (C)<br><span class="opacity-90">525 W Adams (N 6th), Iron River</span></li>
-                        <li><strong>7 pm</strong> — M95 Church Basement (O)<br><span class="opacity-90">Randville</span></li>
-                        <li><strong>7 pm</strong> — St Margaret Church (O)<br><span class="opacity-90">Pembine</span></li>
-                    </ul>
-                </div>
-
-                <!-- Thursday -->
-                <div class="meeting-day rounded-3xl p-8">
-                    <h3 class="text-3xl font-semibold mb-6 text-center">THURSDAY</h3>
-                    <ul class="space-y-6 text-white">
-                        <li><strong>Noon</strong> — 401 Club (O)<br><span class="opacity-90">401 Kimberly, Iron Mountain</span></li>
-                        <li><strong>5:30 pm</strong> — 401 Club (C) Women<br><span class="opacity-90">401 Kimberly, Iron Mountain</span></li>
-                        <li><strong>5:30 pm</strong> — Trinity Methodist Newcomers (O)<br><span class="opacity-90">808 Carpenter, Iron Mountain</span></li>
-                        <li><strong>7 pm</strong> — VA Hospital<br><span class="opacity-90">315 E H St, Iron Mountain</span></li>
-                    </ul>
-                </div>
-
-                <!-- Friday -->
-                <div class="meeting-day rounded-3xl p-8">
-                    <h3 class="text-3xl font-semibold mb-6 text-center">FRIDAY</h3>
-                    <ul class="space-y-6 text-white">
-                        <li><strong>7 am</strong> — Fellowship Club (C)<br><span class="opacity-90">105 W Fleshiem, Iron Mountain</span></li>
-                        <li><strong>10 am</strong> — 1st Lutheran (O)<br><span class="opacity-90">1210 Stephenson, Iron Mountain</span></li>
-                        <li><strong>10 am</strong> — St Agnes School Bldg (C)<br><span class="opacity-90">702 N 4th Ave, Iron River</span></li>
-                        <li><strong>Noon</strong> — 401 Club (O)<br><span class="opacity-90">401 Kimberly, Iron Mountain</span></li>
-                        <li><strong>7:30 pm</strong> — Nadeau Township Hall (C)<br><span class="opacity-90">403 N US 41, Carney</span></li>
-                    </ul>
-                </div>
-
-                <!-- Saturday -->
-                <div class="meeting-day rounded-3xl p-8">
-                    <h3 class="text-3xl font-semibold mb-6 text-center">SATURDAY</h3>
-                    <ul class="space-y-6 text-white">
-                        <li><strong>7 am</strong> — Fellowship Club (O)<br><span class="opacity-90">105 W Fleshiem, Iron Mountain</span></li>
-                        <li><strong>10 am</strong> — 401 Club 12×12 (O)<br><span class="opacity-90">401 Kimberly, Iron Mountain</span></li>
-                        <li><strong>6 pm</strong> — 401 Club Sat Sanity Group (O)<br><span class="opacity-90">401 Kimberly, Iron Mountain<br>(every 3rd Sat Open Speaker)</span></li>
-                        <li><strong>6 pm</strong> — 1st Presbyterian Big Book (O)<br><span class="opacity-90">525 W Adams (N 6th), Iron River</span></li>
-                    </ul>
-                </div>
-
-                <!-- Sunday -->
-                <div class="meeting-day rounded-3xl p-8">
-                    <h3 class="text-3xl font-semibold mb-6 text-center">SUNDAY</h3>
-                    <ul class="space-y-6 text-white">
-                        <li><strong>10 am</strong> — 401 Club (O)<br><span class="opacity-90">401 Kimberly, Iron Mountain</span></li>
-                        <li><strong>5 pm</strong> — Fellowship Club (C)<br><span class="opacity-90">105 W Fleshiem, Iron Mountain</span></li>
-                        <li><strong>6 pm</strong> — United Lutheran (C)<br><span class="opacity-90">506 Superior, Crystal Falls</span></li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <div class="mt-16 text-center text-sm text-slate-500">
-                <p><strong>(O)</strong> = Open Meeting  <strong>(C)</strong> = Closed Meeting</p>
-                <p class="mt-4">All are welcome. Call the 24/7 AA Helpline if you need immediate help: <a href="tel:800-344-2666" class="underline">800-344-2666</a></p>
-            </div>
+    <!-- ABOUT -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="section-header text-4xl font-bold text-[#003366] mb-6">What is Alcoholics Anonymous?</h2>
+            <p class="text-lg text-slate-600 leading-relaxed">
+                Alcoholics Anonymous is a fellowship of people who share their experience, strength and hope with each other 
+                that they may solve their common problem and help others to recover from alcoholism.
+            </p>
+            <p class="text-lg text-slate-600 mt-6">
+                The only requirement for membership is a desire to stop drinking.
+            </p>
         </div>
     </section>
 
     <!-- CONTACT -->
     <section id="contact" class="py-20 bg-[#003366] text-white">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="section-header text-4xl font-bold mb-6">Need Help or More Information?</h2>
+            <h2 class="text-4xl font-bold mb-6">Need Help?</h2>
             <p class="text-xl mb-8">Contact UPAA District 17</p>
-            <div class="text-2xl font-medium">district17@upaadistrict17.org</div>
-            <p class="mt-12 text-sm opacity-75">This website is a service of Alcoholics Anonymous District 17, Upper Peninsula, Michigan.</p>
+            <a href="mailto:district17@upaadistrict17.org" class="text-2xl underline">district17@upaadistrict17.org</a>
         </div>
     </section>
 
