@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="UPAA District 17 - Alcoholics Anonymous in the Upper Peninsula of Michigan">
     <title>UPAA District 17 | Alcoholics Anonymous</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -26,9 +25,7 @@
         }
         @keyframes twinkle { 0% { opacity: 0.3; } 100% { opacity: 1; } }
         
-        .nav-link {
-            position: relative;
-        }
+        .nav-link { position: relative; }
         .nav-link:after {
             content: ''; position: absolute; width: 0; height: 2px; bottom: -2px; left: 0;
             background-color: #003366;
@@ -36,14 +33,15 @@
         .nav-link:hover:after { width: 100%; }
         
         .section-header { font-family: 'Playfair Display', sans-serif; }
+        .meeting-day { background: linear-gradient(135deg, #003366, #001a33); color: white; border-radius: 20px; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800">
 
     <!-- NAVBAR -->
     <nav class="bg-white border-b shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex justify-between items-center py-4">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
                 <div class="flex items-center gap-x-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 200 200">
                         <circle cx="100" cy="100" r="92" fill="none" stroke="#003366" stroke-width="18"/>
@@ -51,17 +49,15 @@
                         <text x="100" y="118" text-anchor="middle" fill="#003366" font-size="58" font-family="Arial Black" font-weight="900" letter-spacing="-4">AA</text>
                     </svg>
                     <div>
-                        <h1 class="text-2xl font-semibold tracking-tight text-[#003366]">UPAA</h1>
-                        <p class="text-xs -mt-1 font-medium text-slate-500">DISTRICT 17 • UPPER PENINSULA</p>
+                        <h1 class="text-2xl font-semibold text-[#003366]">UPAA District 17</h1>
                     </div>
                 </div>
 
-                <!-- Navigation Links -->
-                <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
-                    <a href="#home" class="nav-link text-slate-700 hover:text-[#003366]">Home</a>
-                    <a href="#about" class="nav-link text-slate-700 hover:text-[#003366]">About AA</a>
-                    <a href="meetings.html" class="nav-link text-slate-700 hover:text-[#003366] font-semibold">District 17 Meetings</a>
-                    <a href="#contact" class="nav-link text-slate-700 hover:text-[#003366]">Contact</a>
+                <div class="flex gap-x-8 text-sm font-medium">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About AA</a>
+                    <a href="#meetings" class="nav-link font-semibold">District 17 Meetings</a>
+                    <a href="#contact" class="nav-link">Contact</a>
                 </div>
             </div>
         </div>
@@ -72,59 +68,91 @@
         <div id="stars-container" class="stars"></div>
         <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
             <div class="flex justify-center mb-8">
-                <svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 200 200" class="aa-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="280" height="280" viewBox="0 0 200 200">
                     <circle cx="100" cy="100" r="92" fill="none" stroke="#ffffff" stroke-width="22"/>
                     <polygon points="100,38 165,145 35,145" fill="none" stroke="#ffffff" stroke-width="16" stroke-linejoin="round"/>
                     <text x="100" y="118" text-anchor="middle" fill="#003366" font-size="58" font-family="Arial Black" font-weight="900" letter-spacing="-4">AA</text>
                 </svg>
             </div>
-            <h1 class="text-5xl md:text-7xl font-bold text-white tracking-tighter mb-4">UPAA DISTRICT 17</h1>
-            <p class="text-2xl md:text-3xl text-white/90 font-light mb-8">Alcoholics Anonymous • Upper Peninsula, Michigan</p>
-            <a href="meetings.html" 
-               class="inline-flex items-center justify-center bg-white text-[#003366] font-semibold px-8 py-4 rounded-2xl text-lg hover:shadow-xl">
-                View District 17 Meetings →
-            </a>
+            <h1 class="text-5xl md:text-7xl font-bold text-white tracking-tighter">UPAA DISTRICT 17</h1>
+            <p class="text-2xl text-white/90 mt-4">Alcoholics Anonymous • Upper Peninsula, Michigan</p>
         </div>
     </header>
 
     <!-- ABOUT -->
     <section id="about" class="py-20 bg-white">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="section-header text-4xl font-bold text-[#003366] mb-6">What is Alcoholics Anonymous?</h2>
-            <p class="text-lg text-slate-600 leading-relaxed">
-                Alcoholics Anonymous is a fellowship of people who share their experience, strength and hope with each other 
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <h2 class="section-header text-4xl font-bold text-[#003366] mb-8">What is Alcoholics Anonymous?</h2>
+            <p class="text-lg leading-relaxed text-slate-600">
+                A fellowship of men and women who share their experience, strength, and hope with each other 
                 that they may solve their common problem and help others to recover from alcoholism.
             </p>
-            <p class="text-lg text-slate-600 mt-6">
-                The only requirement for membership is a desire to stop drinking.
-            </p>
+        </div>
+    </section>
+
+    <!-- MEETINGS -->
+    <section id="meetings" class="py-20 bg-slate-100">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="section-header text-5xl font-bold text-[#003366] text-center mb-12">District 17 Meetings</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+
+                <div class="meeting-day p-8 text-white">
+                    <h3 class="text-3xl font-bold mb-6 text-center">MONDAY</h3>
+                    <ul class="space-y-4">
+                        <li><strong>Noon</strong> — 401 Club (O) — 401 Kimberly, Iron Mountain</li>
+                        <li><strong>7 pm</strong> — United Lutheran (C) — 506 Superior, Crystal Falls</li>
+                        <li><strong>7 pm</strong> — 1st Lutheran (C) — 1210 Stephenson, Iron Mountain</li>
+                    </ul>
+                </div>
+
+                <div class="meeting-day p-8 text-white">
+                    <h3 class="text-3xl font-bold mb-6 text-center">TUESDAY</h3>
+                    <ul class="space-y-4">
+                        <li><strong>10 am</strong> — St Agnes School (C) — 702 N 4th Ave, Iron River</li>
+                        <li><strong>10 am</strong> — St Mary's (C) — 401 Main St, Norway</li>
+                        <li><strong>10 am</strong> — VA Hospital (Veterans only) — Rm 3117, Iron Mountain</li>
+                        <li><strong>Noon</strong> — 401 Club (O) — 401 Kimberly, Iron Mountain</li>
+                        <li><strong>5 pm</strong> — VA Hospital (O) — 2 E Urgent Care, Iron Mountain</li>
+                        <li><strong>6 pm</strong> — Fellowship Club Big Book (C) — 105 W Fleshiem, Iron Mountain</li>
+                    </ul>
+                </div>
+
+                <!-- Add more days as needed. For now this gives you a working structure. -->
+
+            </div>
+
+            <div class="mt-12 text-center">
+                <p class="text-sm text-slate-500">
+                    (O) = Open Meeting  (C) = Closed Meeting<br>
+                    All are welcome. Call <a href="tel:800-344-2666" class="underline">800-344-2666</a> for immediate help.
+                </p>
+            </div>
         </div>
     </section>
 
     <!-- CONTACT -->
     <section id="contact" class="py-20 bg-[#003366] text-white">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold mb-6">Need Help?</h2>
-            <p class="text-xl mb-8">Contact UPAA District 17</p>
-            <a href="mailto:district17@upaadistrict17.org" class="text-2xl underline">district17@upaadistrict17.org</a>
+            <h2 class="text-4xl font-bold mb-6">Get in Touch</h2>
+            <p class="text-xl">UPAA District 17</p>
         </div>
     </section>
 
-    <footer class="bg-slate-900 text-white/60 py-8 text-center text-xs">
-        <p>© 2026 UPAA District 17 • Alcoholics Anonymous</p>
+    <footer class="bg-slate-900 text-white/70 py-10 text-center text-sm">
+        © 2026 UPAA District 17 • Alcoholics Anonymous
     </footer>
 
     <script>
         function createStars() {
             const container = document.getElementById('stars-container');
-            for (let i = 0; i < 250; i++) {
+            for (let i = 0; i < 200; i++) {
                 const star = document.createElement('div');
                 star.className = 'star';
                 star.style.left = Math.random() * 100 + '%';
-                star.style.top = Math.random() * 80 + '%';
-                star.style.width = Math.random() * 3 + 1 + 'px';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.width = Math.random() * 2.5 + 1 + 'px';
                 star.style.height = star.style.width;
-                star.style.animationDelay = '-' + Math.random() * 4 + 's';
                 container.appendChild(star);
             }
         }
