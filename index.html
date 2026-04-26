@@ -54,6 +54,7 @@
                     </div>
                 </div>
 
+                <!-- Navigation Links -->
                 <div class="flex gap-x-8 text-sm font-medium">
                     <a href="#home" class="nav-link">Home</a>
                     <a href="#about" class="nav-link">About AA</a>
@@ -97,6 +98,7 @@
             <h2 class="section-header text-5xl font-bold text-[#003366] text-center mb-12">District 17 Meetings</h2>
 
             <div class="grid md:grid-cols-2 gap-8">
+
                 <!-- Monday -->
                 <div class="meeting-day p-8">
                     <h3 class="text-3xl font-semibold mb-6 text-center">MONDAY</h3>
@@ -160,4 +162,58 @@
                     <ul class="space-y-4">
                         <li><strong>7 am</strong> — Fellowship Club (O)<br>105 W Fleshiem, Iron Mountain</li>
                         <li><strong>10 am</strong> — 401 Club 12×12 (O)<br>401 Kimberly, Iron Mountain</li>
-                        <li><strong>6 pm</strong> — 401 Club Sat Sanity Group (O)<br>401 Kimberly, Iron Mountain <span class="text-xs">(every 3rd Sat Open
+                        <li><strong>6 pm</strong> — 401 Club Sat Sanity Group (O)<br>401 Kimberly, Iron Mountain <span class="text-xs">(every 3rd Sat Open Speaker)</span></li>
+                        <li><strong>6 pm</strong> — 1st Presbyterian Big Book (O)<br>525 W Adams (N 6th), Iron River</li>
+                    </ul>
+                </div>
+
+                <!-- Sunday -->
+                <div class="meeting-day p-8">
+                    <h3 class="text-3xl font-semibold mb-6 text-center">SUNDAY</h3>
+                    <ul class="space-y-4">
+                        <li><strong>10 am</strong> — 401 Club (O)<br>401 Kimberly, Iron Mountain</li>
+                        <li><strong>5 pm</strong> — Fellowship Club (C)<br>105 W Fleshiem, Iron Mountain</li>
+                        <li><strong>6 pm</strong> — United Lutheran (C)<br>506 Superior, Crystal Falls</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="mt-16 text-center text-sm text-slate-500">
+                <p><strong>(O)</strong> = Open Meeting  <strong>(C)</strong> = Closed Meeting</p>
+                <p class="mt-6">All are welcome. 24/7 AA Helpline: <a href="tel:800-344-2666" class="underline">800-344-2666</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-20 bg-[#003366] text-white">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-6">Get in Touch</h2>
+            <p class="text-2xl">district17@upaadistrict17.org</p>
+        </div>
+    </section>
+
+    <!-- SMALL FOOTER -->
+    <footer class="bg-slate-900 text-white/70 py-8 text-center text-xs">
+        © 2026 UPAA District 17 • Alcoholics Anonymous<br>
+        This website is a service of District 17, Area 74 (Upper Peninsula of Michigan)
+    </footer>
+
+    <script>
+        function createStars() {
+            const container = document.getElementById('stars-container');
+            for (let i = 0; i < 250; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.width = Math.random() * 3 + 1 + 'px';
+                star.style.height = star.style.width;
+                container.appendChild(star);
+            }
+        }
+        window.onload = createStars;
+    </script>
+</body>
+</html>
